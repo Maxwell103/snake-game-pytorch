@@ -1,3 +1,10 @@
+
+import sys
+
+# Append directory path to sys.path
+sys.path.append(r'C:\Users\maxwe\Documents\Github repos\snake-game-pytorch\snake-pygame')
+
+
 import torch
 import random
 import numpy as np
@@ -5,6 +12,7 @@ from collections import deque
 from game import SnakeGameAI, Direction, Point
 from model import Linear_QNet, QTrainer
 from helper import plot
+
 
 #Can play around with these
 MAX_MEMORY = 100_000
