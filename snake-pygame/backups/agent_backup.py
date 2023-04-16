@@ -8,10 +8,9 @@ from helper import plot
 
 
 #Can play around with these
-MAX_MEMORY = 100_000 # Maximum size of the replay memory buffer
-BATCH_SIZE = 1000 # Batch size for training the neural network
-LR = 0.001 # Learning rate for the optimizer
-GAMMA = 0.9 # Discount rate for the Q-values
+MAX_MEMORY = 100_000
+BATCH_SIZE = 1000
+LR = 0.001
 
 class Agent:
     
@@ -19,11 +18,10 @@ class Agent:
             self.n_games = 0
             self.epsilon = 0 #control the randomness
             self.gamma = 0.9 #discount rate
-            self.memory = deque(maxlen=MAX_MEMORY) # Set the maximum size of the replay memory buffer
-            self.model = Linear_QNet(11, 256, 3) # Update the neural network architecture if needed
-            self.trainer = QTrainer(self.model, lr=LR, gamma=self.gamma) # Update the learning rate and discount rate
-
-            
+            self.memory = deque(maxlen = MAX_MEMORY) # calls popleft()
+            self.model = Linear_QNet(11,256,3)  #input, hidden, output
+            self.trainer = QTrainer(self.model, lr= LR, gamma = self.gamma)
+            # TODO: model, trainer
         
         def get_state(self, game):
             head = game.snake[0]
@@ -134,7 +132,7 @@ def train():
             # train long memory, plot result
             game.reset()
             agent.n_games += 1
-            agent.train_long_memory() # Update the hyperparameters for training the neural network
+            agent.train_long_memory()
             
             if score > record :
                 record = score
@@ -146,7 +144,7 @@ def train():
             total_score += score
             mean_score = total_score / agent.n_games
             plot_mean_scores.append(mean_score)
-            plot(plot_scores, plot_mean_scores,30)
+            plot(plot_scores, plot_mean_scores)
             
             
 if __name__ == "__main__":
