@@ -10,7 +10,7 @@ from helper import plot
 #Can play around with these
 MAX_MEMORY = 100_000 # Maximum size of the replay memory buffer
 BATCH_SIZE = 1000 # Batch size for training the neural network
-LR = 0.001 # Learning rate for the optimizer
+LR = 0.0001 # Learning rate for the optimizer
 GAMMA = 0.9 # Discount rate for the Q-values
 
 class Agent:
@@ -140,11 +140,13 @@ def train():
                 record = score
                 agent.model.save()
                 
-            print('Game:', agent.n_games,'Score:', score, 'Record:', record)
+            
             
             plot_scores.append(score)
             total_score += score
             mean_score = total_score / agent.n_games
+            
+            print('Game:', agent.n_games,' ,Score:', score, ' ,Record:', record, ' ,Total Score:', total_score,' ,Mean Score:', mean_score)
             plot_mean_scores.append(mean_score)
             plot(plot_scores, plot_mean_scores,30)
             
