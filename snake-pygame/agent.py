@@ -7,8 +7,8 @@ from model import Linear_QNet, QTrainer
 from helper import plot
 
 
-#Can play around with these
-MAX_MEMORY = 100_000 # Maximum size of the replay memory buffer
+
+MAX_MEMORY = 400_000 # Maximum size of the replay memory buffer
 BATCH_SIZE = 1000 # Batch size for training the neural network
 LR = 0.001 # Learning rate for the optimizer
 GAMMA = 0.8 # Discount rate for the Q-values
