@@ -1,6 +1,6 @@
 # SnakeGameRL with PyTorch
 
-[NLPExerciseMaxwellErnst.ipynb - Colaboratory.pdf](https://github.com/Maxwell103/snake-game-pytorch/files/13658022/NLPExerciseMaxwellErnst.ipynb.-.Colaboratory.pdf)
+
 
 
 Welcome to the SnakeGameRL project powered by PyTorch! 
